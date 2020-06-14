@@ -1,0 +1,76 @@
+{% extends 'home/index.html' %}
+{% load static %}
+
+{% block title %}Main{% endblock %}
+
+{% block header %}
+<div class="container d-flex align-items-center flex-column">
+    <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="{% static "home/assets/img/avataaars.svg" %}" alt="" /><!-- Masthead Heading-->
+    <h1 class="masthead-heading text-uppercase mb-0">{{ request.session.username }}</h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <!-- Masthead Subheading-->
+    <p class="masthead-subheading font-weight-light mb-0">내정보 보기</p>
+</div>
+
+{% endblock %}
+
+{% block nav %}
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1">
+                            {% if request.session.userid != None %}
+                                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  href="/myinfo/">{{ request.session.username }}</a>
+                            {% else %}
+                                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  href="/login/">LOGIN</a>
+                            {% endif %}
+                        </li><li class="nav-item mx-0 mx-lg-1">
+                                {% if request.session.userid != None %}
+                                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/logout/">Logout</a></li>
+                                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/changePassword/">Change Password</a></li>
+                                {% else %}
+
+                                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  href="/join/">Join</a></li>
+                                {% endif %}
+                            </li>
+                    </ul>
+                </div>{% endblock %}
+
+
+
+
+{% block all %}
+<style>
+    .stringSpan {
+        width: 300px; height:60px;
+        text-align: left;
+        margin-right: 300px;
+        display: block;
+    }
+    .sib{
+        width:1000px;
+    }
+</style>
+    <div class="container d-flex align-items-center flex-column">  
+        <h1 class="masthead-heading text-uppercase mb-0">내정보 보기</h1>
+        <div class="divider-custom divider-light" >
+            <div class="divider-custom-line2"></div>
+            <div class="divider-custom-icon"><i style="color:black;" class="fas fa-star"></i></div>
+            <div class="divider-custom-line2"></div>
+    </div>
+    <div class="sib">
+        <div><h1 class="masthead-heading text-uppercase mb-0"><span class="stringSpan">ID :</span>
+                <span class="stringSpan2">{{ request.session.userid }}</span></h1></div>
+                <hr><br>
+                <h1 class="masthead-heading text-uppercase mb-0"><span class="stringSpan">Password :</span>
+                <span class="stringSpan2">********</span></h1>
+            <hr><br>
+                <h1 class="masthead-heading text-uppercase mb-0"><span class="stringSpan">이름 :</span>
+                <span class="stringSpan2">{{ request.session.username }}</span></h1>
+                    <br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    </div>
+{% endblock %}

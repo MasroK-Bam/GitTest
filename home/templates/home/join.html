@@ -1,0 +1,76 @@
+{% extends 'home/index.html' %}
+{% block nav %}
+{% endblock %}
+
+{% block header %} <h1> JOIN </h1>{% endblock %}
+
+{% block all %}<div class="container">
+    <!-- Contact Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Join Me</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <!-- Contact Section Form-->
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+            <fieldset>
+            <form id="contactForm" name="sentMessage" novalidate="novalidate" method="POST" action="">
+                {% csrf_token %}
+                <div>
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <label>Name</label><input class="form-control" name="username" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name." />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <label>Email Address</label><input class="form-control" name="useremail"type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <label>Phone Number</label><input class="form-control" name="userphone" type="number" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number." />
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <label>ID</label><input class="form-control" name="userid" rows="5" placeholder="ID" required="required" data-validation-required-message="Please enter your ID."/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <label>Pass Word</label><input class="form-control" type="password" name="userpw" rows="5" placeholder="PassWord" required="required" data-validation-required-message="Please enter your PassWord."/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <label>Pass Word</label><input class="form-control" type="password" name="userpw2" rows="5" placeholder="PassWordChecked" required="required" data-validation-required-message="Please enter your PassWord."/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                        <label>Birth</label><input class="form-control" type="date" name="birth" rows="5" placeholder="Birth" required="required" data-validation-required-message="Please enter your Birth."/>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <br />
+                <div></div>
+                <input class="nav-item mx-0 mx-lg-1" style="margin-bottom: 20px;" type="submit" value="Join"></div>
+            </form>
+        </div>
+    </div>
+</div></fieldset>{% endblock %}
+
+{% block movie %}{% endblock %}
+
+
+{% block news %}{% endblock %}

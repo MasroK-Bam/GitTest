@@ -1,0 +1,31 @@
+{% extends 'home/index.html' %}
+
+{% block nav %}
+{% endblock %}
+
+{% block header %}
+    <h1 class="re"><a href="/review">Reveiw</a></h1>
+    <table class="mimi" cellspacing=1 border="1" align="center">
+        <tr>
+            <td>
+                {{query.post_title}}
+            </td>
+        </tr>
+    </table>
+    <table class="coco" cellspacing=1 width=1200 height=500px border=1 align="center">
+        <tr>
+            <th>
+                {{ query.post_contents }}
+            </th>
+        </tr>
+    </table>
+    <table class="newwrite">
+        <div class="form-group" style="background-color: aliceblue;"></div>
+        <a href="/review"><input class="btn btn-primary2 btn-xl" type="button" value="이전"></a>
+        
+    </table>
+{% endblock %}
+
+{% block all %}
+</body>
+{% endblock %}

@@ -5,10 +5,91 @@
 
 {% block header %}
     <h1>Reveiw</h1>
-    <h2>{{movie.movie_name}}</h2>
-    <p>{{movie.movie_content}}</p>
+    <!--
+    <br>
+    <table class="mimi" cellspacing=1 width=700 border="1" align="center">
+        <tr>
+            <td width=50><p align=center>번호</p>
+            </td>
+            <td width=100><p align=center>이름</p>
+            </td>
+            <td width=320><p align=center>제목</p>
+            </td>
+            <td width=100><p align=center>등록일</p>
+            </td>
+        </tr>
+        {%for i in qs %}
+        
+        <tr>
+            <td>{{i.pk}}</td>
+            <td>{{i.writer}}</td>
+            <td style="color: aliceblue;">
+                <a href="/reviewpage/{{i.pk}}/">
+                {{i.post_title}}</a></td>
+            <td>{{i.post_date}}</td>
+            
+        </tr>
+        {%endfor%}
+
+        
+    </table>
+    <br>
+    {% for i in pageList %}
+            <a href="/review/?page={{ i }}">
+                {% if page == i %} <strong> {% endif %}
+                [{{ i }}]
+                {% if page == i %} </strong> {% endif %}
+            </a>
+    {% endfor %}
+    <table class="newwrite">
+        <div class="form-group" style="background-color: aliceblue;"></div>
+        <input class="btn btn-primary2 btn-xl" type="submit" value="Review 쓰기" onclick="location.replace('/newwrite/{{movie.movie_code}}')">
+    </table>-->
 {% endblock %}
+
 
 {% block all %}
 
+ <body style="text-align: center;">
+    
+
+<table  style="text-align: center; padding: 6rem;" class="mimi" cellspacing=1 width=700 border="1" align="center">
+    <tr>
+        <td width=50><p align=center>번호</p>
+        </td>
+        <td width=100><p align=center>이름</p>
+        </td>
+        <td width=320><p align=center>제목</p>
+        </td>
+        <td width=100><p align=center>등록일</p>
+        </td>
+    </tr>
+    {%for i in qs %}
+    
+    <tr>
+        <td>{{i.pk}}</td>
+        <td>{{i.writer}}</td>
+        <td style="color: aliceblue;">
+            <a href="/reviewpage/{{i.pk}}/">
+            {{i.post_title}}</a></td>
+        <td>{{i.post_date}}</td>
+        
+    </tr>
+    {%endfor%}
+
+    
+</table>
+<br>
+{% for i in pageList %}
+        <a href="/review/?page={{ i }}">
+            {% if page == i %} <strong> {% endif %}
+            [{{ i }}]
+            {% if page == i %} </strong> {% endif %}
+        </a>
+{% endfor %}
+<table  class="newwrite">
+    <div class="form-group" style="background-color: aliceblue;"></div>
+    <input  class="btn btn-primary2 btn-xl" type="submit" value="Review 쓰기" onclick="location.replace('/newwrite/{{movie.movie_code}}')">
+</table>
+</body>
 {% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'home/index.html' %}\
+{% load static %}
+{% block nav %}
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item mx-0 mx-lg-1">
+        {% if request.session.userid != None %}
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  href="/myinfo/">{{ request.session.username }}</a>
+        {% else %}
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  href="/login/">LOGIN</a>
+        {% endif %}
+    </li><li class="nav-item mx-0 mx-lg-1">
+            {% if request.session.userid != None %}
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/review/">Review</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/logout/">Logout</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/changePassword/">Change Password</a></li>
+            {% else %}
+
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"  href="/join/">Join</a></li>
+            {% endif %}
+        </li>
+</ul>
+</div>{% endblock %}
+
+{% block header %}
+    <h1>Reveiw</h1>
+{% endblock %}
+
+{% block all %}
+<div class="container" style="padding: 6rem 0;">
+    <!-- Portfolio Section Heading-->
+<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Reiview</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <div class="row">
+        <!-- Portfolio Item 1-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <a href="/review/1"><div class="portfolio-item mx-auto" data-toggle="modal" >
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static "home/assets/img/portfolio/underwater2020.png" %}" />
+            </div></a>
+        </div>
+        <!-- Portfolio Item 2-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <a href="/review/2"><div class="portfolio-item mx-auto" data-toggle="modal">
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static "home/assets/img/portfolio/thisisme.png" %}" alt="" />
+            </div></a>
+        </div>
+        <!-- Portfolio Item 3-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <a href="/review/3"><div class="portfolio-item mx-auto" data-toggle="modal" >
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static "home/assets/img/portfolio/prisonescape.png" %}" alt="" />
+            </div></a>
+        </div>
+        <!-- Portfolio Item 4-->
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <a href="/review/4"><div class="portfolio-item mx-auto" data-toggle="modal" >
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static "home/assets/img/portfolio/cafebellafork.png" %}" alt="" />
+            </div></a>
+        </div>
+        <!-- Portfolio Item 5-->
+        <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+            <a href="/review/5"><div class="portfolio-item mx-auto" data-toggle="modal" >
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static "home/assets/img/portfolio/troll.png" %}" alt="" />
+            </div></a>
+        </div>
+        <!-- Portfolio Item 6-->
+        <div class="col-md-6 col-lg-4">
+            <a href="/review/6"><div class="portfolio-item mx-auto" data-toggle="modal" >
+                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static "home/assets/img/portfolio/thehome.png" %}" alt="" />
+            </div></a>
+        </div>
+    </div>
+    </div>
+
+</body>
+{% endblock %}

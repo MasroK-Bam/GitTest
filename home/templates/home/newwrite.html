@@ -1,0 +1,72 @@
+{% extends 'home/index.html' %}
+
+    <!-- <h1>글쓰기</h1>
+    <div class="" cellspacing=1 width=700 align="center">
+        <form method="POST" class="newwrite">
+            {% csrf_token %}
+            <div>
+                <div class="wri">
+                    <input type="text" name="writer" placeholder="작성자" size="40" autofocus >
+                </div>
+
+            </div>
+            <div class="tit">
+                <div class="">
+                    <input type="text" name="post_title" placeholder="제목" size="40">
+                </div>
+            </div>
+            <div class="con">
+                <textarea name="post_contents" rows="25" cols="80" placeholder="내용을 작성하세요"></textarea>
+            </div>
+            <div class="fin">
+                <a href="/review"><input type="submit" value="완료"></a>
+            </div>
+        </form>
+    </div> -->
+{% block all %}
+<section class="page-section portfolio" id="newwrite" style="background-color: white;">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">글쓰기</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Contact Section Form-->
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.-->
+                <form name="sentMessage" novalidate="novalidate" method="POST" action="/newwrite/{{ code }}/">
+                    {% csrf_token %}
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label>작성자</label><input class="form-control" name="writer" type="text" placeholder="작성자" required="required" autofocus data-validation-required-message="Please enter your name." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label>제목</label><input class="form-control" name="post_title" type="text" placeholder="제목" required="required" data-validation-required-message="Please enter your email address." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                            <label>내용</label>
+                            <textarea class="form-control" name="post_contents" type="text" placeholder="내용을 입력하세요" required="required" data-validation-required-message="Please enter your phone number."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <br>
+                    <div id=""></div>
+                    <div class="form-group"></div>
+                    <input class="btn btn-primary btn-xl" type="submit" value="업로드">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+{% endblock %}
